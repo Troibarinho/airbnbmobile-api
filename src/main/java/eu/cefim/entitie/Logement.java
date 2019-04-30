@@ -8,6 +8,8 @@ import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
+
+
 @Entity
 @Table(name="logement")
 public class Logement {
@@ -32,18 +34,16 @@ public class Logement {
 	
 	@NotNull
 	@Size(max=5)
-    private Integer codePostal;
+    private String codePostal;
 	
 	@NotNull
 	@Size(max=100)
     private String ville;
 	
 	@NotNull
-	@Size(max=2)
     private Integer capacite;
 	
 	@NotNull
-	@Size(max=4)
     private Integer prixNuit;
 	
 	@NotNull
@@ -54,7 +54,7 @@ public class Logement {
 		
 	}
 
-	public Logement(String titre, String type, String description, String adresse, int codePostal, String ville,
+	public Logement(String titre, String type, String description, String adresse, String codePostal, String ville,
 		int capacite, int prixNuit, String urlImage) {
 		super();
 		this.titre = titre;
@@ -108,11 +108,11 @@ public class Logement {
 		this.adresse = adresse;
 	}
 
-	public Integer getCodePostal() {
+	public String getCodePostal() {
 		return codePostal;
 	}
 
-	public void setCodePostal(Integer codePostal) {
+	public void setCodePostal(String codePostal) {
 		this.codePostal = codePostal;
 	}
 
