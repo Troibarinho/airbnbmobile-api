@@ -50,12 +50,18 @@ public class Logement {
 	@Size(max=10000)
     private String urlImage;
 	
+	@NotNull
+	private Double latitude;
+	
+	@NotNull
+	private Double longitude;
+	
 	public Logement() {
 		
 	}
 
 	public Logement(String titre, String type, String description, String adresse, String codePostal, String ville,
-		int capacite, int prixNuit, String urlImage) {
+		int capacite, int prixNuit, String urlImage, Double latitude, Double longitude) {
 		super();
 		this.titre = titre;
 		this.type = type;
@@ -66,6 +72,8 @@ public class Logement {
 		this.capacite = capacite;
 		this.prixNuit = prixNuit;
 		this.urlImage = urlImage;
+		this.latitude = latitude;
+		this.longitude = longitude;
 	}
 
 	public Integer getId() {
@@ -146,6 +154,22 @@ public class Logement {
 
 	public void setUrlImage(String urlImage) {
 		this.urlImage = urlImage;
+	}
+
+	public Double getLatitude() {
+		return latitude;
+	}
+
+	public void setLatitude(Double latitude) {
+		this.latitude = latitude;
+	}
+
+	public Double getLongitude() {
+		return longitude;
+	}
+
+	public void setLongitude(Double longitude) {
+		this.longitude = longitude;
 	}
 
 	
